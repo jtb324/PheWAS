@@ -8,6 +8,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/*
 
 # ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
-RUN R -e "install.packages('devtools')"
+RUN R -e "install.packages('devtools', Ncpus=4)"
 RUN R -e "library(devtools);install_github('PheWAS/PheWAS')"
 
